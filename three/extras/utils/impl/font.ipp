@@ -26,7 +26,7 @@ inline std::vector<unsigned char> load( const std::string& file ) {
   fseek( fp, 0, SEEK_SET );
 
   std::vector<unsigned char> buffer( size );
-  fread( buffer.data(), 1, size, fp );
+  size = fread( buffer.data(), 1, size, fp );
   fclose( fp );
   return buffer;
 }
